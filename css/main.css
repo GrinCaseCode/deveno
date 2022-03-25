@@ -103,7 +103,20 @@ form {
 	justify-content: center;
 	border: none;
 	background-color: #333333;
+	border: 1px solid #333;
 	border-radius: 0px 4px 4px 0px;
+	transition: all 0.3s;
+}
+.btn-search:hover {
+	background-color: #fff;
+}
+.btn-search circle,
+.btn-search path {
+	transition: all 0.3s;
+}
+.btn-search:hover circle,
+.btn-search:hover path {
+	stroke: #333;
 }
 .search-main__wrap {
 	display: flex;
