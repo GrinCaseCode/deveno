@@ -14,7 +14,7 @@
 	color: #BDBDBD;
 	opacity: 1;
 }
-
+ 
 body input:focus:required:invalid,
 body textarea:focus:required:invalid {
 	
