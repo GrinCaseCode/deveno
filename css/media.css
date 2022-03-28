@@ -378,6 +378,9 @@ li.menu__haschild.active > a::after {
   line-height: 48px;
   padding-bottom: 15px;
 }
+.item-catalog:hover .price-main, .item-catalog:hover .price-old {
+  opacity: 1;
+}
 }
 
 /* Extra Small Devices, Phones */
