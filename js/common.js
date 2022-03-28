@@ -1,6 +1,45 @@
 $(document).ready(function() {
 
 
+// Hide Header on on scroll down
+var didScroll;
+var lastScrollTop = 0;
+var delta = 5;
+var navbarHeight = $('.header').outerHeight();
+
+$(window).scroll(function(event){
+	didScroll = true;
+});
+
+setInterval(function() {
+	if (didScroll) {
+		hasScrolled();
+		didScroll = false;
+	}
+}, 250);
+
+function hasScrolled() {
+	var st = $(this).scrollTop();
+
+    // Make sure they scroll more than delta
+    if(Math.abs(lastScrollTop - st) <= delta)
+    	return;
+    
+    // If they scrolled down and are past the navbar, add class .nav-up.
+    // This is necessary so you never see what is "behind" the navbar.
+    if (st > lastScrollTop && st > navbarHeight){
+        // Scroll Down
+        $('.header').removeClass('nav-down').addClass('nav-up');
+    } else {
+        // Scroll Up
+        if(st + $(window).height() < $(document).height()) {
+        	$('.header').removeClass('nav-up').addClass('nav-down');
+        }
+    }
+    
+    lastScrollTop = st;
+}
+
 //прилипающие меню
 var $menu = $(".header");
 $(window).scroll(function(){
@@ -25,28 +64,60 @@ if ( $(this).scrollTop() > 0 && $menu.hasClass("default") ){
 	//кнопка sandwich
 	$(".btn_nav").click(function() {
 		$(".sandwich").toggleClass("active");
-		if ($(".menu").is(":hidden")) {
-			$(".menu").slideDown(200);
+		if ($(".menu-mobile").is(":hidden")) {
+			$(".menu-mobile").slideDown(200);
 		} else {
-			$(".menu").slideUp(200);
+			$(".menu-mobile").slideUp(200);
 		}
-		
 	});
 
-	$(".menu a").click(function() {
-		$(".menu").slideUp(200);
-		$(".sandwich").removeClass("active");
+	$("li.menu__haschild > a").click(function(e) {
+		e.preventDefault();
+		$(this).siblings(".menu-dropdown").slideToggle(200);
+		$(this).parent().toggleClass("active");
 	});
+
+	$("li.menu-dropdown__haschild > a").click(function(e) {
+		e.preventDefault();
+		$(this).siblings(".menu-submenu").slideToggle(200);
+		$(this).parent().toggleClass("active");
+	});
+
 
 
 	$(".link-page_more").click(function(e) {
 		e.preventDefault();
 		if ($(this).siblings().hasClass("active")) {
 			$(this).siblings().removeClass("active");
+			$(this).html("Читать полностью");
+
 		} else {
 			$(this).siblings().addClass("active");
+			$(this).html("Скрыть");
 		}
 		
+	});
+
+	/*range slider*/
+
+	$(function() {
+		var $range = $(".range-catalog_price .range-catalog__input"),
+		$from = $(".range-catalog_price .control-input__from"),
+		$to = $(".range-catalog_price .control-input__to"),
+		min = 0,
+		max = 380000;
+		$range.ionRangeSlider({
+			type: "double",
+			min: min,
+			max: max,
+			from: 13500,
+			to: 380000,
+			prettify_enabled: true,
+		        postfix: " ₽"
+
+		});
+
+
 	});
 	//слайдер
 
@@ -60,8 +131,73 @@ if ( $(this).scrollTop() > 0 && $menu.hasClass("default") ){
 		nextArrow: '<div class="slick-next slick-arrow"><i class="fal fa-chevron-right"></i><div/>',
 	});
 
-	$('.slider-catalog').slick({
+	$('.slider-categories').slick({
 		arrows: true,
+		dots: false,
+		infinite: false,
+		slidesToShow: 4,
+		slidesToScroll: 1,
+		prevArrow: '<div class="slick-prev slick-arrow"><i class="fal fa-chevron-left"></i><div/>',
+		nextArrow: '<div class="slick-next slick-arrow"><i class="fal fa-chevron-right"></i><div/>',
+		responsive: [
+		{
+			breakpoint: 1200,
+			settings: {
+				slidesToShow:3,
+			}
+		},
+		{
+			breakpoint: 992,
+			settings: {
+				slidesToShow:2,
+			}
+		},
+		{
+			breakpoint: 480,
+			settings: {
+				slidesToShow:1,
+			}
+		}
+		]
+	});
+
+	$(".category-sorting__title").click(function(e) {
+		e.preventDefault();
+		$(this).siblings(".category-sorting__content").slideToggle(200);
+		$(this).toggleClass("active");
+	});
+
+	$(".category-sorting__haschild > .item-sorting").click(function(e) {
+		e.preventDefault();
+		$(this).siblings("ul").slideToggle(200);
+		$(this).toggleClass("active");
+	});
+
+	$(".btn-page_filter").click(function(e) {
+		e.preventDefault();
+		$(".sidebar-filter").slideToggle(200);
+	});
+
+	var width = window.innerWidth || document.body.clientWidth;
+var $slick = $('.slider-catalog');
+
+// destroy slick if you are using smart resize
+// smartresize url: https://gist.github.com/Pushplaybang/3341936
+// $slick.slick('unslick');
+
+if(width < 768) {
+     $slick.slick({
+              arrows: true,
+		dots: false,
+		infinite: false,
+		slidesToShow: 1,
+		slidesToScroll: 1,
+		prevArrow: '<div class="slick-prev slick-arrow"><i class="fal fa-chevron-left"></i><div/>',
+		nextArrow: '<div class="slick-next slick-arrow"><i class="fal fa-chevron-right"></i><div/>',
+     });
+} else {
+      $slick.slick({
+           arrows: true,
 		dots: false,
 		infinite: false,
 		slidesToShow: 1,
@@ -70,7 +206,8 @@ if ( $(this).scrollTop() > 0 && $menu.hasClass("default") ){
 		rows: 2,
 		prevArrow: '<div class="slick-prev slick-arrow"><i class="fal fa-chevron-left"></i><div/>',
 		nextArrow: '<div class="slick-next slick-arrow"><i class="fal fa-chevron-right"></i><div/>',
-	});
+     });
+};
 
 	$('.slider-posts').slick({
 		arrows: true,
@@ -82,7 +219,18 @@ if ( $(this).scrollTop() > 0 && $menu.hasClass("default") ){
 		rows: 2,
 		prevArrow: '<div class="slick-prev slick-arrow"><i class="fal fa-chevron-left"></i><div/>',
 		nextArrow: '<div class="slick-next slick-arrow"><i class="fal fa-chevron-right"></i><div/>',
+		responsive: [
+		{
+			breakpoint: 768,
+			settings: {
+				arrows: false,
+				dots: true,
+			}
+		}
+		]
+
 	});
+
 
 	$(".input-phone").mask("+7 (999) 999-99-99");
 
@@ -97,6 +245,28 @@ if ( $(this).scrollTop() > 0 && $menu.hasClass("default") ){
 
 		$('.slider-catalog').slick('refresh');
 	});
+
+
+	 {
+    if ($(window).width() < 992) { 
+      $(".footer__title").click(function() {
+        $(this).toggleClass("active");
+        $(this).siblings(".footer__content").slideToggle(200);
+      });
+
+      $(".btn-header_personal").click(function(e) {
+      	e.preventDefault();
+       $(this).siblings(".dropdown-header").slideToggle(200);
+      });
+       $(document).mouseup(function (e){ 
+    var div = $(".wrap-btn-header"); 
+    if (!div.is(e.target) 
+      && div.has(e.target).length === 0) { 
+     div.find(".dropdown-header").slideUp(200);
+ }
+});
+    }
+  }
 
 
 	 // стайлер для select
