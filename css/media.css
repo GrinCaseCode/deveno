@@ -371,7 +371,7 @@ li.menu__haschild.active > a::after {
 .breadcrumbs {
   font-size: 13px;
   line-height: 22px; 
-  padding-bottom: 10px;
+  padding-bottom: 10px; 
 }
 .title-page {
   font-size: 40px;

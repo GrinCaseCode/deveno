@@ -38,7 +38,7 @@ function hasScrolled() {
     }
     
     lastScrollTop = st;
-}
+} 
 
 //прилипающие меню
 var $menu = $(".header");
