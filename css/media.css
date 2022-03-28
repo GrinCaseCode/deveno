@@ -367,7 +367,7 @@ li.menu__haschild.active > a::after {
 .slider-categories {
   margin: 0 -5px;
   margin-bottom: 20px;
-}
+} 
 .breadcrumbs {
   font-size: 13px;
   line-height: 22px;

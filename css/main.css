@@ -20,7 +20,7 @@ body textarea:focus:required:invalid {
 	
 }
 body input:required:valid,
-body textarea:required:valid {
+body textarea:required:valid { 
 	
 }
 body {
