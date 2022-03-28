@@ -69,6 +69,7 @@
  }
  .wrap-btn-header {
    padding: 0;
+   margin-left: 17px;
  }
  .header-top {
    padding: 13px 0;	
@@ -378,7 +379,10 @@ li.menu__haschild.active > a::after {
   line-height: 48px;
   padding-bottom: 15px;
 }
-.item-catalog:hover .price-main, .item-catalog:hover .price-old {
+.item-catalog .price-main,
+.item-catalog .price-old,
+.item-catalog:hover .price-main,
+.item-catalog:hover .price-old {
   opacity: 1;
 }
 }
