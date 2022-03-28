@@ -8,7 +8,7 @@ var delta = 5;
 var navbarHeight = $('.header').outerHeight();
 
 $(window).scroll(function(event){
-	didScroll = true;
+	didScroll = true; 
 });
 
 setInterval(function() {

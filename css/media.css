@@ -370,7 +370,7 @@ li.menu__haschild.active > a::after {
 } 
 .breadcrumbs {
   font-size: 13px;
-  line-height: 22px;
+  line-height: 22px; 
   padding-bottom: 10px;
 }
 .title-page {
