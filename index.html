@@ -15,18 +15,19 @@
 	<link rel="shortcut icon" href="favicon.png" />
 	<link rel="stylesheet" href="libs/bootstrap/bootstrap-grid.css" />
 	<link rel="stylesheet" href="libs/fontawesome-free-5.12.0-web/css/all.min.css" />
+	<link rel="stylesheet" href="libs/ion.rangeSlider-master/css/ion.rangeSlider.min.css" />
 	<link rel="stylesheet" href="libs/fancybox/jquery.fancybox.css" />
 	<link rel="stylesheet" href="libs/slick-1.5.9/slick/slick.css" />
 	<link rel="stylesheet" href="libs/slick-1.5.9/slick/slick-theme.css" />
 	<link rel="stylesheet" href="css/fonts.css" />
-	<link rel="stylesheet" href="css/main.css?ver=1.1" />
-	<link rel="stylesheet" href="css/media.css?ver=1.1" />
+	<link rel="stylesheet" href="css/main.css?ver=1.2" />
+	<link rel="stylesheet" href="css/media.css?ver=1.2" />
 </head>
 <body>
- 
+
 	<div class="wrapper">
 
-		<header class="header">
+		<header class="header default">
 			<div class="container">
 				<div class="header-top">
 					<a href="#" class="logo">
@@ -44,6 +45,13 @@
 						<a href="mailto:info@deveno.ru" class="contact-main">info@deveno.ru</a>
 						<a href="tel:+79781115425" class="contact-main">+7 (978) 111-54-25</a>
 					</div>
+					<span class="btn_nav">
+						<span class='sandwich'>
+							<span class='sw-topper'></span>
+							<span class='sw-bottom'></span>
+							<span class='sw-footer'></span>
+						</span>
+					</span>
 				</div>
 				<div class="header-bottom">
 					<ul class="menu">
@@ -91,7 +99,7 @@
 					</ul>
 					<div class="header-buttons">
 						<div class="wrap-btn-header">
-							<a href="#" class="btn-header">
+							<a href="#" class="btn-header btn-header_personal">
 								<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M19.7274 20.4471C19.2716 19.1713 18.2672 18.0439 16.8701 17.2399C15.4729 16.4358 13.7611 16 12 16C10.2389 16 8.52706 16.4358 7.12991 17.2399C5.73276 18.0439 4.72839 19.1713 4.27259 20.4471" stroke="white" stroke-linecap="round"/><circle cx="12" cy="8" r="4" stroke="white" stroke-linecap="round"/></svg>
 							</a>
 							<div class="dropdown-header">
@@ -108,6 +116,59 @@
 						</div>
 					</div>
 				</div>
+			</div>
+			<div class="menu-mobile">
+				<div class="search-main">
+					<form>
+						<div class="search-main__wrap">
+							<input type="text" placeholder="Найти" required="required">
+							<button class="btn-search"><svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="14.6667" cy="14.668" r="8" stroke="white"/><path d="M26.6667 26.668L22.6667 22.668" stroke="white" stroke-linecap="round"/></svg></button>
+						</div>
+					</form>
+				</div>
+				<ul class="menu">
+					<li class="menu__haschild">
+						<a href="#">Освещение</a>
+						<ul class="menu-dropdown">
+							<li class="menu-dropdown__haschild">
+								<a href="#">Подвесные</a>
+								<ul class="menu-submenu">
+									<li><a href="#">Декоративные</a></li>
+									<li><a href="#">Каскадные</a></li>
+									<li><a href="#">Деревянные</a></li>
+								</ul>
+							</li>
+							<li class="menu-dropdown__haschild">
+								<a href="#">Люстры</a>
+								<ul class="menu-submenu">
+									<li><a href="#">Декоративные</a></li>
+									<li><a href="#">Каскадные</a></li>
+									<li><a href="#">Деревянные</a></li>
+								</ul>
+							</li>
+							<li><a href="#">Потолочные</a></li>
+							<li class="menu-dropdown__haschild">
+								<a href="#">Споты</a>
+								<ul class="menu-submenu">
+									<li><a href="#">Декоративные</a></li>
+									<li><a href="#">Каскадные</a></li>
+									<li><a href="#">Деревянные</a></li>
+								</ul>
+							</li>
+							<li><a href="#">Торшеры</a></li>
+							<li><a href="#">Бра</a></li>
+							<li><a href="#">Накладные</a></li>
+							<li><a href="#">Настольные лампы</a></li>
+						</ul>
+					</li>
+					<li><a href="#">Мебель</a></li>
+					<li><a href="#">Декор</a></li>
+					<li><a href="#">Ковры</a></li>
+					<li><a href="#">О компании</a></li>
+					<li><a href="#">О компании</a></li>
+					<li><a href="#">Производство</a></li>
+					<li><a href="#">Контакты</a></li>
+				</ul>
 			</div>
 		</header>
 
@@ -229,7 +290,7 @@
 									<a href="#" class="btn-page">Купить <img src="img/arrow.svg" alt="alt"></a>
 									<div class="buttons-card">
 										<a href="#" class="btn-card"><img src="img/bag.svg" alt="alt"></a>
-										<a href="#" class="btn-card"><img src="img/lens.svg" alt="alt"></a>
+										<a href="#preview-catalog" class="btn-card fancybox"><img src="img/lens.svg" alt="alt"></a>
 									</div>
 								</div>
 							</li>
@@ -244,7 +305,7 @@
 									<a href="#" class="btn-page">Купить <img src="img/arrow.svg" alt="alt"></a>
 									<div class="buttons-card">
 										<a href="#" class="btn-card"><img src="img/bag.svg" alt="alt"></a>
-										<a href="#" class="btn-card"><img src="img/lens.svg" alt="alt"></a>
+										<a href="#preview-catalog" class="btn-card fancybox"><img src="img/lens.svg" alt="alt"></a>
 									</div>
 								</div>
 							</li>
@@ -259,7 +320,7 @@
 									<a href="#" class="btn-page">Купить <img src="img/arrow.svg" alt="alt"></a>
 									<div class="buttons-card">
 										<a href="#" class="btn-card"><img src="img/bag.svg" alt="alt"></a>
-										<a href="#" class="btn-card"><img src="img/lens.svg" alt="alt"></a>
+										<a href="#preview-catalog" class="btn-card fancybox"><img src="img/lens.svg" alt="alt"></a>
 									</div>
 								</div>
 							</li>
@@ -274,7 +335,7 @@
 									<a href="#" class="btn-page">Купить <img src="img/arrow.svg" alt="alt"></a>
 									<div class="buttons-card">
 										<a href="#" class="btn-card"><img src="img/bag.svg" alt="alt"></a>
-										<a href="#" class="btn-card"><img src="img/lens.svg" alt="alt"></a>
+										<a href="#preview-catalog" class="btn-card fancybox"><img src="img/lens.svg" alt="alt"></a>
 									</div>
 								</div>
 							</li>
@@ -289,7 +350,7 @@
 									<a href="#" class="btn-page">Купить <img src="img/arrow.svg" alt="alt"></a>
 									<div class="buttons-card">
 										<a href="#" class="btn-card"><img src="img/bag.svg" alt="alt"></a>
-										<a href="#" class="btn-card"><img src="img/lens.svg" alt="alt"></a>
+										<a href="#preview-catalog" class="btn-card fancybox"><img src="img/lens.svg" alt="alt"></a>
 									</div>
 								</div>
 							</li>
@@ -304,7 +365,7 @@
 									<a href="#" class="btn-page">Купить <img src="img/arrow.svg" alt="alt"></a>
 									<div class="buttons-card">
 										<a href="#" class="btn-card"><img src="img/bag.svg" alt="alt"></a>
-										<a href="#" class="btn-card"><img src="img/lens.svg" alt="alt"></a>
+										<a href="#preview-catalog" class="btn-card fancybox"><img src="img/lens.svg" alt="alt"></a>
 									</div>
 								</div>
 							</li>
@@ -319,7 +380,7 @@
 									<a href="#" class="btn-page">Купить <img src="img/arrow.svg" alt="alt"></a>
 									<div class="buttons-card">
 										<a href="#" class="btn-card"><img src="img/bag.svg" alt="alt"></a>
-										<a href="#" class="btn-card"><img src="img/lens.svg" alt="alt"></a>
+										<a href="#preview-catalog" class="btn-card fancybox"><img src="img/lens.svg" alt="alt"></a>
 									</div>
 								</div>
 							</li>
@@ -334,7 +395,7 @@
 									<a href="#" class="btn-page">Купить <img src="img/arrow.svg" alt="alt"></a>
 									<div class="buttons-card">
 										<a href="#" class="btn-card"><img src="img/bag.svg" alt="alt"></a>
-										<a href="#" class="btn-card"><img src="img/lens.svg" alt="alt"></a>
+										<a href="#preview-catalog" class="btn-card fancybox"><img src="img/lens.svg" alt="alt"></a>
 									</div>
 								</div>
 							</li>
@@ -349,7 +410,7 @@
 									<a href="#" class="btn-page">Купить <img src="img/arrow.svg" alt="alt"></a>
 									<div class="buttons-card">
 										<a href="#" class="btn-card"><img src="img/bag.svg" alt="alt"></a>
-										<a href="#" class="btn-card"><img src="img/lens.svg" alt="alt"></a>
+										<a href="#preview-catalog" class="btn-card fancybox"><img src="img/lens.svg" alt="alt"></a>
 									</div>
 								</div>
 							</li>
@@ -364,7 +425,7 @@
 									<a href="#" class="btn-page">Купить <img src="img/arrow.svg" alt="alt"></a>
 									<div class="buttons-card">
 										<a href="#" class="btn-card"><img src="img/bag.svg" alt="alt"></a>
-										<a href="#" class="btn-card"><img src="img/lens.svg" alt="alt"></a>
+										<a href="#preview-catalog" class="btn-card fancybox"><img src="img/lens.svg" alt="alt"></a>
 									</div>
 								</div>
 							</li>
@@ -379,7 +440,7 @@
 									<a href="#" class="btn-page">Купить <img src="img/arrow.svg" alt="alt"></a>
 									<div class="buttons-card">
 										<a href="#" class="btn-card"><img src="img/bag.svg" alt="alt"></a>
-										<a href="#" class="btn-card"><img src="img/lens.svg" alt="alt"></a>
+										<a href="#preview-catalog" class="btn-card fancybox"><img src="img/lens.svg" alt="alt"></a>
 									</div>
 								</div>
 							</li>
@@ -394,7 +455,7 @@
 									<a href="#" class="btn-page">Купить <img src="img/arrow.svg" alt="alt"></a>
 									<div class="buttons-card">
 										<a href="#" class="btn-card"><img src="img/bag.svg" alt="alt"></a>
-										<a href="#" class="btn-card"><img src="img/lens.svg" alt="alt"></a>
+										<a href="#preview-catalog" class="btn-card fancybox"><img src="img/lens.svg" alt="alt"></a>
 									</div>
 								</div>
 							</li>
@@ -413,7 +474,7 @@
 									<a href="#" class="btn-page">Купить <img src="img/arrow.svg" alt="alt"></a>
 									<div class="buttons-card">
 										<a href="#" class="btn-card"><img src="img/bag.svg" alt="alt"></a>
-										<a href="#" class="btn-card"><img src="img/lens.svg" alt="alt"></a>
+										<a href="#preview-catalog" class="btn-card fancybox"><img src="img/lens.svg" alt="alt"></a>
 									</div>
 								</div>
 							</li>
@@ -428,7 +489,7 @@
 									<a href="#" class="btn-page">Купить <img src="img/arrow.svg" alt="alt"></a>
 									<div class="buttons-card">
 										<a href="#" class="btn-card"><img src="img/bag.svg" alt="alt"></a>
-										<a href="#" class="btn-card"><img src="img/lens.svg" alt="alt"></a>
+										<a href="#preview-catalog" class="btn-card fancybox"><img src="img/lens.svg" alt="alt"></a>
 									</div>
 								</div>
 							</li>
@@ -443,7 +504,7 @@
 									<a href="#" class="btn-page">Купить <img src="img/arrow.svg" alt="alt"></a>
 									<div class="buttons-card">
 										<a href="#" class="btn-card"><img src="img/bag.svg" alt="alt"></a>
-										<a href="#" class="btn-card"><img src="img/lens.svg" alt="alt"></a>
+										<a href="#preview-catalog" class="btn-card fancybox"><img src="img/lens.svg" alt="alt"></a>
 									</div>
 								</div>
 							</li>
@@ -458,7 +519,7 @@
 									<a href="#" class="btn-page">Купить <img src="img/arrow.svg" alt="alt"></a>
 									<div class="buttons-card">
 										<a href="#" class="btn-card"><img src="img/bag.svg" alt="alt"></a>
-										<a href="#" class="btn-card"><img src="img/lens.svg" alt="alt"></a>
+										<a href="#preview-catalog" class="btn-card fancybox"><img src="img/lens.svg" alt="alt"></a>
 									</div>
 								</div>
 							</li>
@@ -473,7 +534,7 @@
 									<a href="#" class="btn-page">Купить <img src="img/arrow.svg" alt="alt"></a>
 									<div class="buttons-card">
 										<a href="#" class="btn-card"><img src="img/bag.svg" alt="alt"></a>
-										<a href="#" class="btn-card"><img src="img/lens.svg" alt="alt"></a>
+										<a href="#preview-catalog" class="btn-card fancybox"><img src="img/lens.svg" alt="alt"></a>
 									</div>
 								</div>
 							</li>
@@ -488,7 +549,7 @@
 									<a href="#" class="btn-page">Купить <img src="img/arrow.svg" alt="alt"></a>
 									<div class="buttons-card">
 										<a href="#" class="btn-card"><img src="img/bag.svg" alt="alt"></a>
-										<a href="#" class="btn-card"><img src="img/lens.svg" alt="alt"></a>
+										<a href="#preview-catalog" class="btn-card fancybox"><img src="img/lens.svg" alt="alt"></a>
 									</div>
 								</div>
 							</li>
@@ -503,7 +564,7 @@
 									<a href="#" class="btn-page">Купить <img src="img/arrow.svg" alt="alt"></a>
 									<div class="buttons-card">
 										<a href="#" class="btn-card"><img src="img/bag.svg" alt="alt"></a>
-										<a href="#" class="btn-card"><img src="img/lens.svg" alt="alt"></a>
+										<a href="#preview-catalog" class="btn-card fancybox"><img src="img/lens.svg" alt="alt"></a>
 									</div>
 								</div>
 							</li>
@@ -518,7 +579,7 @@
 									<a href="#" class="btn-page">Купить <img src="img/arrow.svg" alt="alt"></a>
 									<div class="buttons-card">
 										<a href="#" class="btn-card"><img src="img/bag.svg" alt="alt"></a>
-										<a href="#" class="btn-card"><img src="img/lens.svg" alt="alt"></a>
+										<a href="#preview-catalog" class="btn-card fancybox"><img src="img/lens.svg" alt="alt"></a>
 									</div>
 								</div>
 							</li>
@@ -533,7 +594,7 @@
 									<a href="#" class="btn-page">Купить <img src="img/arrow.svg" alt="alt"></a>
 									<div class="buttons-card">
 										<a href="#" class="btn-card"><img src="img/bag.svg" alt="alt"></a>
-										<a href="#" class="btn-card"><img src="img/lens.svg" alt="alt"></a>
+										<a href="#preview-catalog" class="btn-card fancybox"><img src="img/lens.svg" alt="alt"></a>
 									</div>
 								</div>
 							</li>
@@ -548,7 +609,7 @@
 									<a href="#" class="btn-page">Купить <img src="img/arrow.svg" alt="alt"></a>
 									<div class="buttons-card">
 										<a href="#" class="btn-card"><img src="img/bag.svg" alt="alt"></a>
-										<a href="#" class="btn-card"><img src="img/lens.svg" alt="alt"></a>
+										<a href="#preview-catalog" class="btn-card fancybox"><img src="img/lens.svg" alt="alt"></a>
 									</div>
 								</div>
 							</li>
@@ -563,7 +624,7 @@
 									<a href="#" class="btn-page">Купить <img src="img/arrow.svg" alt="alt"></a>
 									<div class="buttons-card">
 										<a href="#" class="btn-card"><img src="img/bag.svg" alt="alt"></a>
-										<a href="#" class="btn-card"><img src="img/lens.svg" alt="alt"></a>
+										<a href="#preview-catalog" class="btn-card fancybox"><img src="img/lens.svg" alt="alt"></a>
 									</div>
 								</div>
 							</li>
@@ -578,7 +639,7 @@
 									<a href="#" class="btn-page">Купить <img src="img/arrow.svg" alt="alt"></a>
 									<div class="buttons-card">
 										<a href="#" class="btn-card"><img src="img/bag.svg" alt="alt"></a>
-										<a href="#" class="btn-card"><img src="img/lens.svg" alt="alt"></a>
+										<a href="#preview-catalog" class="btn-card fancybox"><img src="img/lens.svg" alt="alt"></a>
 									</div>
 								</div>
 							</li>
@@ -597,7 +658,7 @@
 									<a href="#" class="btn-page">Купить <img src="img/arrow.svg" alt="alt"></a>
 									<div class="buttons-card">
 										<a href="#" class="btn-card"><img src="img/bag.svg" alt="alt"></a>
-										<a href="#" class="btn-card"><img src="img/lens.svg" alt="alt"></a>
+										<a href="#preview-catalog" class="btn-card fancybox"><img src="img/lens.svg" alt="alt"></a>
 									</div>
 								</div>
 							</li>
@@ -612,7 +673,7 @@
 									<a href="#" class="btn-page">Купить <img src="img/arrow.svg" alt="alt"></a>
 									<div class="buttons-card">
 										<a href="#" class="btn-card"><img src="img/bag.svg" alt="alt"></a>
-										<a href="#" class="btn-card"><img src="img/lens.svg" alt="alt"></a>
+										<a href="#preview-catalog" class="btn-card fancybox"><img src="img/lens.svg" alt="alt"></a>
 									</div>
 								</div>
 							</li>
@@ -627,7 +688,7 @@
 									<a href="#" class="btn-page">Купить <img src="img/arrow.svg" alt="alt"></a>
 									<div class="buttons-card">
 										<a href="#" class="btn-card"><img src="img/bag.svg" alt="alt"></a>
-										<a href="#" class="btn-card"><img src="img/lens.svg" alt="alt"></a>
+										<a href="#preview-catalog" class="btn-card fancybox"><img src="img/lens.svg" alt="alt"></a>
 									</div>
 								</div>
 							</li>
@@ -642,7 +703,7 @@
 									<a href="#" class="btn-page">Купить <img src="img/arrow.svg" alt="alt"></a>
 									<div class="buttons-card">
 										<a href="#" class="btn-card"><img src="img/bag.svg" alt="alt"></a>
-										<a href="#" class="btn-card"><img src="img/lens.svg" alt="alt"></a>
+										<a href="#preview-catalog" class="btn-card fancybox"><img src="img/lens.svg" alt="alt"></a>
 									</div>
 								</div>
 							</li>
@@ -657,7 +718,7 @@
 									<a href="#" class="btn-page">Купить <img src="img/arrow.svg" alt="alt"></a>
 									<div class="buttons-card">
 										<a href="#" class="btn-card"><img src="img/bag.svg" alt="alt"></a>
-										<a href="#" class="btn-card"><img src="img/lens.svg" alt="alt"></a>
+										<a href="#preview-catalog" class="btn-card fancybox"><img src="img/lens.svg" alt="alt"></a>
 									</div>
 								</div>
 							</li>
@@ -672,7 +733,7 @@
 									<a href="#" class="btn-page">Купить <img src="img/arrow.svg" alt="alt"></a>
 									<div class="buttons-card">
 										<a href="#" class="btn-card"><img src="img/bag.svg" alt="alt"></a>
-										<a href="#" class="btn-card"><img src="img/lens.svg" alt="alt"></a>
+										<a href="#preview-catalog" class="btn-card fancybox"><img src="img/lens.svg" alt="alt"></a>
 									</div>
 								</div>
 							</li>
@@ -687,7 +748,7 @@
 									<a href="#" class="btn-page">Купить <img src="img/arrow.svg" alt="alt"></a>
 									<div class="buttons-card">
 										<a href="#" class="btn-card"><img src="img/bag.svg" alt="alt"></a>
-										<a href="#" class="btn-card"><img src="img/lens.svg" alt="alt"></a>
+										<a href="#preview-catalog" class="btn-card fancybox"><img src="img/lens.svg" alt="alt"></a>
 									</div>
 								</div>
 							</li>
@@ -702,7 +763,7 @@
 									<a href="#" class="btn-page">Купить <img src="img/arrow.svg" alt="alt"></a>
 									<div class="buttons-card">
 										<a href="#" class="btn-card"><img src="img/bag.svg" alt="alt"></a>
-										<a href="#" class="btn-card"><img src="img/lens.svg" alt="alt"></a>
+										<a href="#preview-catalog" class="btn-card fancybox"><img src="img/lens.svg" alt="alt"></a>
 									</div>
 								</div>
 							</li>
@@ -717,7 +778,7 @@
 									<a href="#" class="btn-page">Купить <img src="img/arrow.svg" alt="alt"></a>
 									<div class="buttons-card">
 										<a href="#" class="btn-card"><img src="img/bag.svg" alt="alt"></a>
-										<a href="#" class="btn-card"><img src="img/lens.svg" alt="alt"></a>
+										<a href="#preview-catalog" class="btn-card fancybox"><img src="img/lens.svg" alt="alt"></a>
 									</div>
 								</div>
 							</li>
@@ -732,7 +793,7 @@
 									<a href="#" class="btn-page">Купить <img src="img/arrow.svg" alt="alt"></a>
 									<div class="buttons-card">
 										<a href="#" class="btn-card"><img src="img/bag.svg" alt="alt"></a>
-										<a href="#" class="btn-card"><img src="img/lens.svg" alt="alt"></a>
+										<a href="#preview-catalog" class="btn-card fancybox"><img src="img/lens.svg" alt="alt"></a>
 									</div>
 								</div>
 							</li>
@@ -747,7 +808,7 @@
 									<a href="#" class="btn-page">Купить <img src="img/arrow.svg" alt="alt"></a>
 									<div class="buttons-card">
 										<a href="#" class="btn-card"><img src="img/bag.svg" alt="alt"></a>
-										<a href="#" class="btn-card"><img src="img/lens.svg" alt="alt"></a>
+										<a href="#preview-catalog" class="btn-card fancybox"><img src="img/lens.svg" alt="alt"></a>
 									</div>
 								</div>
 							</li>
@@ -762,7 +823,7 @@
 									<a href="#" class="btn-page">Купить <img src="img/arrow.svg" alt="alt"></a>
 									<div class="buttons-card">
 										<a href="#" class="btn-card"><img src="img/bag.svg" alt="alt"></a>
-										<a href="#" class="btn-card"><img src="img/lens.svg" alt="alt"></a>
+										<a href="#preview-catalog" class="btn-card fancybox"><img src="img/lens.svg" alt="alt"></a>
 									</div>
 								</div>
 							</li>
@@ -775,7 +836,7 @@
 		<section class="advantages section-main">
 			<div class="container">
 				<div class="row row_advantages">
-					<div class="col-lg-3 col-md-6">
+					<div class="col-lg-3 col-6">
 						<div class="item-advantage">
 							<div class="item-advantage__icon">
 								<img src="img/ic_avd.svg" alt="alt">
@@ -783,7 +844,7 @@
 							<p>Текстовое описание каждого преимущества</p>
 						</div>
 					</div>
-					<div class="col-lg-3 col-md-6">
+					<div class="col-lg-3 col-6">
 						<div class="item-advantage">
 							<div class="item-advantage__icon">
 								<img src="img/ic_avd.svg" alt="alt">
@@ -791,7 +852,7 @@
 							<p>Текстовое описание каждого преимущества</p>
 						</div>
 					</div>
-					<div class="col-lg-3 col-md-6">
+					<div class="col-lg-3 col-6">
 						<div class="item-advantage">
 							<div class="item-advantage__icon">
 								<img src="img/ic_avd.svg" alt="alt">
@@ -799,7 +860,7 @@
 							<p>Текстовое описание каждого преимущества</p>
 						</div>
 					</div>
-					<div class="col-lg-3 col-md-6">
+					<div class="col-lg-3 col-6">
 						<div class="item-advantage">
 							<div class="item-advantage__icon">
 								<img src="img/ic_avd.svg" alt="alt">
@@ -907,7 +968,7 @@
 					<li>
 						<div class="item-post">
 							<a href="#" class="item-post__image">
-								<img src="img/post7.jpg" alt="alt">
+								<img src="img/post1.jpg" alt="alt">
 							</a>
 							<div class="like-btn"><img src="img/like.svg" alt="alt"></div>
 						</div>
@@ -915,7 +976,7 @@
 					<li>
 						<div class="item-post">
 							<a href="#" class="item-post__image">
-								<img src="img/post8.jpg" alt="alt">
+								<img src="img/post2.jpg" alt="alt">
 							</a>
 							<div class="like-btn"><img src="img/like.svg" alt="alt"></div>
 						</div>
@@ -923,7 +984,31 @@
 					<li>
 						<div class="item-post">
 							<a href="#" class="item-post__image">
-								<img src="img/post9.jpg" alt="alt">
+								<img src="img/post3.jpg" alt="alt">
+							</a>
+							<div class="like-btn"><img src="img/like.svg" alt="alt"></div>
+						</div>
+					</li>
+					<li>
+						<div class="item-post">
+							<a href="#" class="item-post__image">
+								<img src="img/post4.jpg" alt="alt">
+							</a>
+							<div class="like-btn"><img src="img/like.svg" alt="alt"></div>
+						</div>
+					</li>
+					<li>
+						<div class="item-post">
+							<a href="#" class="item-post__image">
+								<img src="img/post5.jpg" alt="alt">
+							</a>
+							<div class="like-btn"><img src="img/like.svg" alt="alt"></div>
+						</div>
+					</li>
+					<li>
+						<div class="item-post">
+							<a href="#" class="item-post__image">
+								<img src="img/post6.jpg" alt="alt">
 							</a>
 							<div class="like-btn"><img src="img/like.svg" alt="alt"></div>
 						</div>
@@ -940,20 +1025,22 @@
 				<div class="row">
 					<div class="col-lg-4">
 						<div class="descr-logo">Обращайтесь, будем рады ответить <br>на любые вопросы по дизайну <br>и товарам для интерьера</div>
-						<p>Мы в соц. сетях:</p>
-						<ul class="list-social">
-							<li><a href="#"><img src="img/soc1.svg" alt="alt"></a></li>
-							<li><a href="#"><img src="img/soc2.svg" alt="alt"></a></li>
-							<li><a href="#"><img src="img/soc3.svg" alt="alt"></a></li>
-							<li><a href="#"><img src="img/soc4.svg" alt="alt"></a></li>
-							<li><a href="#"><img src="img/soc5.svg" alt="alt"></a></li>
-							<li><a href="#"><img src="img/soc6.svg" alt="alt"></a></li>
-							<li><a href="#"><img src="img/soc7.svg" alt="alt"></a></li>
-							<li><a href="#"><img src="img/soc8.svg" alt="alt"></a></li>
-						</ul>
+						<div class="hidden-mob">
+							<p>Мы в соц. сетях:</p>
+							<ul class="list-social">
+								<li><a href="#"><img src="img/soc1.svg" alt="alt"></a></li>
+								<li><a href="#"><img src="img/soc2.svg" alt="alt"></a></li>
+								<li><a href="#"><img src="img/soc3.svg" alt="alt"></a></li>
+								<li><a href="#"><img src="img/soc4.svg" alt="alt"></a></li>
+								<li><a href="#"><img src="img/soc5.svg" alt="alt"></a></li>
+								<li><a href="#"><img src="img/soc6.svg" alt="alt"></a></li>
+								<li><a href="#"><img src="img/soc7.svg" alt="alt"></a></li>
+								<li><a href="#"><img src="img/soc8.svg" alt="alt"></a></li>
+							</ul>
+						</div>
 					</div>
 					<div class="col-lg">
-						<div class="footer__title">Важное</div>
+						<div class="footer__title">Важное <i class="far fa-chevron-down"></i></div>
 						<div class="footer__content">
 							<ul class="footer__nav">
 								<li><a href="#">О компании</a></li>
@@ -964,7 +1051,7 @@
 						</div>
 					</div>
 					<div class="col-lg">
-						<div class="footer__title">Как мы работаем</div>
+						<div class="footer__title">Как мы работаем <i class="far fa-chevron-down"></i></div>
 						<div class="footer__content">
 							<ul class="footer__nav">
 								<li><a href="#">Доставка и оплата</a></li>
@@ -974,11 +1061,24 @@
 						</div>
 					</div>
 					<div class="col-lg">
-						<div class="footer__title">Контакты</div>
+						<div class="footer__title">Контакты <i class="far fa-chevron-down"></i></div>
 						<div class="footer__content">
 							<p>г. Севастополь, проспект Героев Сталинграда, д.63</p>
 							<p>Тел.: <a href="tel:+79781115425">7 (978) 111-54-25</a></p>
 							<p>Email: <a href="mailto:info@deveno.ru">info@deveno.ru</a></p>
+							<div class="show-mob">
+								<p>Мы в соц. сетях:</p>
+								<ul class="list-social">
+									<li><a href="#"><img src="img/soc1.svg" alt="alt"></a></li>
+									<li><a href="#"><img src="img/soc2.svg" alt="alt"></a></li>
+									<li><a href="#"><img src="img/soc3.svg" alt="alt"></a></li>
+									<li><a href="#"><img src="img/soc4.svg" alt="alt"></a></li>
+									<li><a href="#"><img src="img/soc5.svg" alt="alt"></a></li>
+									<li><a href="#"><img src="img/soc6.svg" alt="alt"></a></li>
+									<li><a href="#"><img src="img/soc7.svg" alt="alt"></a></li>
+									<li><a href="#"><img src="img/soc8.svg" alt="alt"></a></li>
+								</ul>
+							</div>
 						</div>
 					</div>
 				</div>
@@ -1000,11 +1100,12 @@
 <script src="libs/jquery/jquery-1.11.1.min.js"></script>
 <script src="libs/jquery-mousewheel/jquery.mousewheel.min.js"></script>
 <script src="libs/fancybox/jquery.fancybox.pack.js"></script>
-<script src="libs/slick-1.5.9/slick/slick.min.js"></script>
+<script src="libs/slick-1.5.9/slick/slick.js"></script>
 <script src="libs/scroll2id/PageScroll2id.min.js"></script>
 <script src="libs/mask/jquery.maskedinput.js"></script>
+<script src="libs/ion.rangeSlider-master/js/ion.rangeSlider.min.js"></script>
 <script src="libs/jQueryFormStyler-master/jquery.formstyler.min.js"></script>
-<script src="js/common.js?ver=1.1"></script>
+<script src="js/common.js?ver=1.2"></script>
 <!-- Yandex.Metrika counter --><!-- /Yandex.Metrika counter -->
 <!-- Google Analytics counter --><!-- /Google Analytics counter -->
 </body>
