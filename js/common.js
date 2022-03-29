@@ -161,6 +161,16 @@ if ( $(this).scrollTop() > 0 && $menu.hasClass("default") ){
 		]
 	});
 
+	$('.slider-card').slick({
+		arrows: true,
+		dots: false,
+		infinite: true,
+		slidesToShow: 1,
+		slidesToScroll: 1,
+		prevArrow: '<div class="slick-prev slick-arrow"><i class="fal fa-chevron-left"></i><div/>',
+		nextArrow: '<div class="slick-next slick-arrow"><i class="fal fa-chevron-right"></i><div/>',
+	});
+
 	$(".category-sorting__title").click(function(e) {
 		e.preventDefault();
 		$(this).siblings(".category-sorting__content").slideToggle(200);
@@ -276,7 +286,11 @@ if(width < 768) {
 	//Документация: http://fancybox.net/howto
 	//<a class="fancybox"><img src="image.jpg" /></a>
 	//<a class="fancybox" data-fancybox-group="group"><img src="image.jpg" /></a>
-	$(".fancybox").fancybox();
+	$(".fancybox").fancybox({
+		 beforeShow : function(){
+     $('.slider-card').slick('refresh');
+  }
+	});
 
 
 	//Кнопка "Наверх"
