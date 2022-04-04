@@ -300,9 +300,6 @@ li.menu__haschild.active > a::after {
   padding-left: 15px;
   padding-top: 20px;
 }
-.tabs-card a::after {
-  bottom: -10px;
-}
 }
 
 /* Small Devices, Tablets */
@@ -505,6 +502,12 @@ li.menu__haschild.active > a::after {
   font-size: 18px;
   line-height: 31px;
   height: 150px;
+}
+.slider-card .slick-prev {
+    left: -13px;
+}
+.slider-card .slick-next {
+    right: -13px;
 }
 }
 
@@ -727,6 +730,7 @@ li.menu__haschild.active > a::after {
   font-size: 15px;
   line-height: 23px;
 }
+
 }
 
 /* Custom, iPhone Retina */

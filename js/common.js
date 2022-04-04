@@ -343,6 +343,15 @@ if(width < 768) {
 		$('.slider-catalog').slick('refresh');
 	});
 
+	$('.tabs-card li a').click(function(event) {
+		event.preventDefault();
+		$(this).parent().parent().find("li").removeClass('active');
+		$(this).parent().addClass('active');
+		$(".tab-pane-card").fadeOut(0);
+		var selectTab2 = $(this).attr("href");
+		$(selectTab2).fadeIn(200);
+	});
+
 
 	 {
     if ($(window).width() < 992) { 
