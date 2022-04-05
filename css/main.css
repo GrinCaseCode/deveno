@@ -25,7 +25,7 @@ body textarea:required:valid {
 }
 body {
 	font-family: 'Montserrat';
-	line-height: 26px;
+	line-height: 26px; 
 	font-size: 16px; 
 	color: #333;
 	overflow-x: hidden;
