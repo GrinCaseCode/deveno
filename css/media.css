@@ -300,6 +300,12 @@ li.menu__haschild.active > a::after {
   padding-left: 15px;
   padding-top: 20px;
 }
+.billbord_registration .item-billbord {
+  padding-top: 15px;
+}
+.registration-simple .item-billbord {
+  padding-top: 30px;
+}
 }
 
 /* Small Devices, Tablets */
@@ -504,10 +510,18 @@ li.menu__haschild.active > a::after {
   height: 150px;
 }
 .slider-card .slick-prev {
-    left: -13px;
+  left: -13px;
 }
 .slider-card .slick-next {
-    right: -13px;
+  right: -13px;
+}
+.billbord_registration .descr-title {
+  font-size: 16px;
+  line-height: 24px;
+  margin-bottom: 10px;
+}
+.registration-simple .item-billbord {
+  padding-top: 45px;
 }
 }
 
@@ -730,7 +744,13 @@ li.menu__haschild.active > a::after {
   font-size: 15px;
   line-height: 23px;
 }
-
+.billbord_registration .descr-title {
+  font-size: 14px;
+  line-height: 21px;
+}
+.registration-simple .btn-main {
+  margin-top: 25px;
+}
 }
 
 /* Custom, iPhone Retina */

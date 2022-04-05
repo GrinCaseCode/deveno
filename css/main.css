@@ -1998,3 +1998,35 @@ input[type=number]
 	margin-bottom: 12px;
 	text-align: center;
 }
+.form-billbord {
+	max-width: 400px;
+	margin: 0 auto;
+}
+.item-billbord .item-form {
+    margin-bottom: 0px;
+}
+.form-billbord .btn-main {
+	margin-top: 25px;
+}
+.item-billbord .item-form input {
+	text-align: center;
+	color: #fff;
+}
+.billbord_registration .descr-title {
+	max-width: 700px;
+	margin: 0 auto;	
+	margin-bottom: 20px;
+}
+.form-billbord_registration .btn-main {
+	width: 100%;
+}
+.billbord_registration .item-billbord {
+	padding-top: 100px;
+}
+.registration-simple .item-billbord {
+	padding-top: 123px;
+}
+.registration-simple .btn-main {
+	padding: 0 45px;
+	margin-top: 40px;
+}
